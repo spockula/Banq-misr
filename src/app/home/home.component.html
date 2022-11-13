@@ -1,0 +1,60 @@
+<main>
+  <div class="main-container">
+    <div class="grid">
+      <div>
+        <p>Amount</p>
+        <input type="number" placeholder="{{this.amount}}" name="amount" [(ngModel)]="amount" />
+      </div>
+      <div>
+        <div class="secondDiv">
+          <div class="firstBox">
+            <p>From</p>
+            <div style="display: flex;">
+              <select id="from_currency" [(ngModel)]="fromCurrency" (ngModelChange)="onChangeFromCurrency($event)">
+                <option *ngFor="let current of currencies; let i = index;" [ngValue]="current.code"  [disabled]="amount === 0">{{current.code}}</option>
+              </select>
+              <button id="exchange" (click)="toggleSelectValue()">
+                <i class="fas fa-exchange-alt"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <p>To</p>
+            <div style="display: flex;">
+              <select id="from_currency" [(ngModel)]="toCurrency" (ngModelChange)="onChangeToCurrency($event)">
+                <option *ngFor="let current of currencies; let i = index;" [ngValue]="current.code"  [disabled]="amount === 0" >{{current.code}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 50px 20px; justify-content: center; justify-items: center; text-align: center;">
+          <button class="btn" (click)="getExchange()"  [disabled]="amount === 0">convert</button>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div style="padding: 20px 0;">
+        <input type="number" placeholder="1 EUR = 1.8 USD" disabled />
+      </div>
+      <div>
+        <div style="display: flex; justify-content: center;">
+          <div style="padding: 20px 20px; justify-content: center; justify-items: center; text-align: center;">
+            <input type="number" placeholder="{{exchangeRate}} {{toCurrency}}" disabled />
+          </div>
+          <div style="padding: 20px 20px; justify-content: center; justify-items: center; text-align: center;">
+            <button class="btn" (click)="goToDetails()"  [disabled]="amount === 0">more details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <section class="card-container">
+
+    <div class="card"  *ngFor="let current of currencies | slice:0:9;">
+      <h1>{{current.code}}</h1>
+      <p>{{exchangeRate}}</p>
+    </div>
+
+  </section>
+</main>

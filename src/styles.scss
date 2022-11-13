@@ -1,1 +1,275 @@
 /* You can add global styles to this file, and also import other style files */
+.main-container {
+  border: 1px;
+  padding: 40px 80px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.grid {
+  align-items: start;
+	display: grid;
+	grid-template-columns: 1fr 1.5fr;
+	grid-column-gap: 10px;
+	grid-gap: 16px;
+  padding: 20px 0;
+}
+
+p {
+  padding-bottom: 10px ;
+}
+
+.secondDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select{
+	width: 180px;
+	height: 35px;
+	font-size: 20px;
+	text-align: center;
+	padding-left: 10px;
+  border-radius:20px;
+  outline: 0;
+}
+
+.firstBox {
+  padding: 0 20px;
+}
+
+#exchange{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 0 20px;
+    outline: 0;
+    color: #00539CFF;
+    border: 4px solid #FFD662FF;
+
+}
+
+input[type=number] {
+	border-color:black;
+}
+
+.card-container {
+	align-items: start;
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+  padding: 20px 0;
+}
+
+.card {
+	background-color: gray;
+	border-radius: 5px;
+	color: white;
+	padding: 24px 0 16px;
+	text-align: center;
+	text-shadow: 1px 1px 0 #555;
+}
+
+input {
+	// margin:15px 0;
+	padding:15px 10px;
+	width: 150px;
+	outline:none;
+  text-align: center;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+.inputBox {
+  color: #fff;
+  font-family: helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: gray;
+  border: 0;
+  padding: 20px 20px;
+  border-radius:3px;
+  line-height: 0.428571;
+  letter-spacing: -0.2px;
+}
+
+
+
+.btn {
+  color: #fff;
+  font-family: helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: #000;
+  border: 0;
+  padding: 20px 20px;
+  border-radius:3px;
+  line-height: 0.428571;
+  letter-spacing: -0.2px;
+}
+
+
+.btn:hover { background: rgba(0,0,0,0.1); cursor: pointer; }
+
+/* =================================
+  Media Queries
+==================================== */
+@media (min-width: 769px) {
+	.navbar,
+	.navbar__links {
+		display: flex;
+	}
+	.navbar {
+		flex-direction: column;
+		align-items: center;
+    	.navbar {
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1366px;
+    }
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.navbar {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+
+@media only screen and (min-width : 320px) {
+  .grid{
+    align-items: start;
+    display: block;
+    grid-template-columns: 1fr 1.5fr;
+    grid-column-gap: 10px;
+    grid-gap: 16px;
+    padding: 20px 0;
+  }
+  .secondDiv {
+    display: block !important;
+  }
+  .btn {
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    background-color: #000;
+    border: 0;
+    padding: 20px 20px;
+    border-radius: 3px;
+    line-height: 0.928571;
+    letter-spacing: -0.2px;
+  }
+  .second {
+    padding: 22px 0;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  .grid{
+    align-items: start;
+    display: block;
+    grid-template-columns: 1fr 1.5fr;
+    grid-column-gap: 10px;
+    grid-gap: 16px;
+    padding: 20px 0;
+  }
+  .secondDiv {
+    display: block !important;
+  }
+  .btn {
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    background-color: #000;
+    border: 0;
+    padding: 20px 20px;
+    border-radius: 3px;
+    line-height: 0.928571;
+    letter-spacing: -0.2px;
+  }
+  .second {
+    padding: 22px 0;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .grid{
+    align-items: start;
+    display: block;
+    grid-template-columns: 1fr 1.5fr;
+    grid-column-gap: 10px;
+    grid-gap: 16px;
+    padding: 20px 0;
+  }
+  .secondDiv {
+    display: block !important;
+  }
+  .btn {
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    background-color: #000;
+    border: 0;
+    padding: 20px 20px;
+    border-radius: 3px;
+    line-height: 0.928571;
+    letter-spacing: -0.2px;
+  }
+  .second {
+    padding: 22px 0;
+  }
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .grid {
+    align-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-column-gap: 10px;
+    grid-gap: 16px;
+    padding: 20px 0;
+  }
+  .secondDiv{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    background-color: #000;
+    border: 0;
+    padding: 20px 20px;
+    border-radius: 3px;
+    line-height: 0.928571;
+    letter-spacing: -0.2px;
+  }
+
+  .second {
+    padding: 0px 0;
+  }
+
+}
