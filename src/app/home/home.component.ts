@@ -46,14 +46,9 @@ export class HomeComponent implements OnInit {
 
   goToDetails() {
     const fullName = this.currencies?.filter((res: any) => res.code === this.fromCurrency)[0].name;
-    const queryParams: any = {};
-    const detailsArray = [{"from": this.fromCurrency, "to": this.toCurrency, "amount": this.amount, "fullName": fullName, 'exchangeRate': this.exchangeRate}];
-    queryParams.myArray = JSON.stringify(detailsArray);
-    const navigationExtras: NavigationExtras = {
-      queryParams
-    };
-
-    this.router.navigate(['details/', this.fromCurrency ], navigationExtras)
+    var extraData = [{"from": this.fromCurrency, "to": this.toCurrency, "amount": this.amount, "fullName": fullName, 'exchangeRate': this.exchangeRate}];
+    localStorage.setItem("extraData", JSON.stringify(extraData));
+    this.router.navigate(['details/', this.fromCurrency ])
   }
 
 }

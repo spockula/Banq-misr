@@ -34,15 +34,15 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.currencies = data;
     this.currency = this.activatedRoute.snapshot.params['currencyCode'];
-    const myArray = this.activatedRoute.snapshot.queryParamMap.get('myArray');
-    if (myArray !== null) {
-      this.initialData = JSON.parse(myArray)[0];
-      this.fromCurrency = this.initialData?.from
-      this.toCurrency = this.initialData.to
-      this.amount = this.initialData.amount
-      this.fullName = this.initialData.fullName
-      this.exchangeRate = this.initialData.exchangeRate
+    if (localStorage.getItem('extraData')) {
+      var storedNames = JSON.parse(localStorage.getItem("extraData") || '{}')[0];
     }
+    this.initialData = storedNames;
+    this.fromCurrency = this.initialData?.from
+    this.toCurrency = this.initialData.to
+    this.amount = this.initialData.amount
+    this.fullName = this.initialData.fullName
+    this.exchangeRate = this.initialData.exchangeRate
   }
 
   onChangeToCurrency(newValue: string) {

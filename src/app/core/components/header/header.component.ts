@@ -17,14 +17,9 @@ export class HeaderComponent implements OnInit {
   }
 
   goToDetails(from: string, to: string, fullName: string) {
-    const queryParams: any = {};
-    const detailsArray = [{"from": from, "to": to, "amount": 1, "fullName": fullName, 'exchangeRate': 1.8}];
-    queryParams.myArray = JSON.stringify(detailsArray);
-    const navigationExtras: NavigationExtras = {
-      queryParams
-    };
-
-    this.router.navigate(['details/', from ], navigationExtras)
+    var extraData = [{"from": from, "to": to, "amount": 1, "fullName": fullName, 'exchangeRate': 1.8}];
+    localStorage.setItem("extraData", JSON.stringify(extraData));
+    this.router.navigate(['details/', from ])
   }
 
 }
